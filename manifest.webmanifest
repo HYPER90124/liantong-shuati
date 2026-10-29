@@ -1,0 +1,26 @@
+{
+  "name": "行测刷题 · 2026联通行测汇编（一）",
+  "short_name": "行测刷题",
+  "description": "手机端刷题工具：122 道行测单选题，含答案与解析，支持错题、收藏、背题与离线。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef2f7",
+  "theme_color": "#1e3a8a",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
