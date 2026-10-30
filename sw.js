@@ -1,5 +1,5 @@
-const CACHE = 'liantong-exam-v2';
-const CORE = ['./', './index.html', './styles.css', './app.js', './data.js', './manifest.webmanifest', './assets/icon.svg', './assets/icon-180.png', './assets/icon-192.png', './assets/icon-512.png'];
+const CACHE = 'liantong-exam-v3';
+const CORE = ['./', './index.html', './styles.css', './app.js', './data/index.js', './manifest.webmanifest', './assets/icon.svg', './assets/icon-180.png', './assets/icon-192.png', './assets/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil((async () => {
