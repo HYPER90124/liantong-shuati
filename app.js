@@ -386,13 +386,22 @@
     if (paperPromises[id]) return paperPromises[id];
     paperPromises[id] = new Promise((resolve, reject) => {
       const s = document.createElement('script');
+      const timer = setTimeout(() => {
+        delete paperPromises[id];
+        reject(new Error('加载超时，请检查网络'));
+      }, 15000);
       s.src = './data/papers/' + id + '.js';
       s.onload = () => {
+        clearTimeout(timer);
         const p = window.EXAM_PAPERS && window.EXAM_PAPERS[id];
         if (p) resolve(p);
         else { delete paperPromises[id]; reject(new Error('题库为空')); }
       };
-      s.onerror = () => { delete paperPromises[id]; reject(new Error('网络错误')); };
+      s.onerror = () => {
+        clearTimeout(timer);
+        delete paperPromises[id];
+        reject(new Error('网络错误'));
+      };
       document.head.appendChild(s);
     });
     return paperPromises[id];
